@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  db:
+  shortier-mysql:
     image: mysql:5.7
+    container_name: shortier-mysql
     restart: always
-    env_file:
-      - ./.env.default
+    env_file: ./.env.docker
     environment:
       MYSQL_DATABASE: "${MYSQL_DB}"
       MYSQL_USER: "${MYSQL_USER}"
@@ -15,6 +15,20 @@ services:
       - '3306:3306'
     volumes:
       - mysql:/var/lib/mysql
+
+  shortier-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: shortier-app
+    restart: unless-stopped
+    env_file: ./.env.docker
+    environment:
+        NODE_ENV: "production"
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    depends_on:
+      - shortier-mysql
 
 
 volumes:

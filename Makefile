@@ -4,7 +4,7 @@ docker:
 	docker-compose down -v --remove-orphans
 	docker-compose rm -vsf
 	docker-compose up -d --build
-	# docker-compose logs -ft shortier-url
+	docker-compose logs -ft shortier-app
 
 undock:
 	docker-compose down
