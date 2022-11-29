@@ -89,11 +89,10 @@ The codebase is located under the `/src` directory:
     ├── app.ts          # Setup express to expose routes. 
     └── server.ts       # Startup server.        
 
-The root directory has all the necessary **NodeJS** files along with `tsconfig.json`, `Dockerfile` and `docker-compose.yml` 
+The root directory has all the necessary **NodeJS** files along with `tsconfig.json`, `Dockerfile` & `docker-compose.yml` 
 and a `Makefile`.
 
-Additional configuration files for **Nodemon** `nodemon.jom`, **ESLint** `.eslintrc` and **Prettier** `.prettierrc` 
-can be found in the root directory. Other dev packages configuration: 
+Other dev packages configuration: 
 
 **[strong-error-handler](https://www.npmjs.com/package/strong-error-handler)** error handler middleware for cleaner codebase:
 ```javascript
