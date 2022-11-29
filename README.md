@@ -3,19 +3,86 @@
 Shortier is a basic URL shortener API that shortens your URLs and is tracking the visits of the generated ones.
 
 The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** database 
-where the generated URLs (_shorten_urls_ table) and analytics (_visits_ table) are stored.
+where the generated URLs (_short_urls_ table) and analytics (_stats_ table) are stored.
+
+### Getting Started
+
+#### Run the application with `docker-compose`
+
+~~~bash
+docker-compose up
+# or using make with extra logs
+make docker
+~~~
+
+> NOTE: `.env.docker` is used for declaring the environment variables within compose.
+
+> Edit: `APP_PORT` to change the exposed port in the local machine.
+
+#### Run the application locally with `npm`
+
+~~~bash
+npm install
+npm run start
+# or with nodemon
+npm install
+npm run dev
+~~~
+
+> NOTE: This requires a local running `mysql` instance.
+
+> Edit: `/src/utils/config.ts` to the proper local configuration.
 
 ### Usage
 
-> **Note:** in order to have the full production experience as if visiting a real URL Shortener domain you need to edit you `hosts` file.
+Three endpoints have been exposed.
 
-### Getting Started
+#### Shorten a URL 
+```JSON
+POST /shorten
+
+Request
+{
+    "url": "http://example.com"
+}
+
+Success Response 200
+{
+    "code": "vBAElVywy"
+    "shortUrl": "://.../vBAElVywy"
+}
+Bad Request 400
+```
+
+#### Visit a shortened URL
+```JSON
+GET /:code
+
+Success Response: -> Redirect to original URL
+Not Found 404
+```
+
+#### View stats for a shortened URL
+```JSON
+GET /:code/stats
+
+Success Response 200
+{
+    "code": "vBAElVywy",
+    "shortUrl": "://.../vBAElVywy",
+    "originalUrl": "http://example.com",
+    "hits": 123
+}
+Not Found 404
+```
+
+> `GET /:code`: in local development use IPv4 on browser `GET 127.0.0.1:3000/:code`.
 
 ### Application Structure
 
 The codebase is located under the `/src` directory:
 
-    ├── /controllers    # Handles the business logic for a request.
+    ├── /controllers    # Handles the logic between a request and storage.
     ├── /models         # Sequalize models (typesctipt-sequalize).
     ├── /routes         # Maps logic from controllers to a route. 
     ├── /services       # Common services and handler functions.
