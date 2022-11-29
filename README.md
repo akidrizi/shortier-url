@@ -96,6 +96,8 @@ and a `Makefile`.
 Additional configuration files for **Nodemon** `nodemon.jom`, **ESLint** `.eslintrc` and **Prettier** `.prettierrc` 
 can be found in the root directory. Other dev packages configuration: 
 
+**[strong-error-handler](https://www.npmjs.com/package/strong-error-handler)** error handler middleware for cleaner codebase.
+
 **[husky](https://www.npmjs.com/package/husky)** for `pre-commit` **lint**:
 ```json
 // package.json
