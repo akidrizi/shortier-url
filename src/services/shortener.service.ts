@@ -21,7 +21,9 @@ export function generateUniqueCode(): string {
  */
 export function getShortenedUrl(req: Request, code: string): string {
 	const host = req.get("host");
-	if (isProduction()) return `https://${config.app.baseUrl}/${code}`;
+
+	// Disabled to prevent miss-usage from users.
+	// if (isProduction()) return `https://${config.app.baseUrl}/${code}`;
 
 	return `://${host}/${code}`;
 }
