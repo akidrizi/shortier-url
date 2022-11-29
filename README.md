@@ -1,9 +1,9 @@
 # ShorTIER... Get it? 😅
 
-Shortier is a basic URL shortener API that shortens your permalinks and is tracking the visits of the generated links.
+Shortier is a basic URL shortener API that shortens your URLs and is tracking the visits of the generated ones.
 
 The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** database 
-where the generated URLs (_permalinks_ table) and analytics (_visits_ table) are stored.
+where the generated URLs (_shorten_urls_ table) and analytics (_visits_ table) are stored.
 
 ### Usage
 
