@@ -1,5 +1,5 @@
 /**
- * Most common used regex to validate an HTTP only url.
+ * Common Regex to validate an HTTP only URL.
  *
  * @return boolean
  */
@@ -12,6 +12,6 @@ export function isUrlHttp(url: string) {
 			"(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
 			"(\\#[-a-z\\d_]*)?$",
 		"i"
-	); // fragment locator
+	);
 	return pattern.test(url);
 }
