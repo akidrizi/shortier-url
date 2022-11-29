@@ -2,8 +2,8 @@
 
 Shortier is a basic URL shortener API that shortens your URLs and is tracking the visits of the generated ones.
 
-The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** database 
-where the generated URLs (_short_urls_ table) and analytics (_stats_ table) are stored.
+The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** 
+where the generated URLs (table: _short_urls_) and analytics (table: _stats_) are stored.
 
 ### Getting Started
 
@@ -61,6 +61,7 @@ GET /:code
 Success Response: -> Redirect to original URL
 Not Found 404
 ```
+> `GET /:code`: in local development use IPv4 on browser `GET 127.0.0.1:3000/:code`.
 
 #### View stats for a shortened URL
 ```JSON
@@ -75,8 +76,6 @@ Success Response 200
 }
 Not Found 404
 ```
-
-> `GET /:code`: in local development use IPv4 on browser `GET 127.0.0.1:3000/:code`.
 
 ### Application Structure
 
@@ -96,7 +95,17 @@ and a `Makefile`.
 Additional configuration files for **Nodemon** `nodemon.jom`, **ESLint** `.eslintrc` and **Prettier** `.prettierrc` 
 can be found in the root directory. Other dev packages configuration: 
 
-**[strong-error-handler](https://www.npmjs.com/package/strong-error-handler)** error handler middleware for cleaner codebase.
+**[strong-error-handler](https://www.npmjs.com/package/strong-error-handler)** error handler middleware for cleaner codebase:
+```javascript
+// app.ts
+
+app.use(
+  strongErrorHandler({
+    debug: !isProduction(),
+    log: isProduction(),
+  })
+);
+```
 
 **[husky](https://www.npmjs.com/package/husky)** for `pre-commit` **lint**:
 ```json
