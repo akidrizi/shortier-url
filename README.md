@@ -17,7 +17,7 @@ make docker
 
 > NOTE: `.env.docker` is used for declaring the environment variables within compose.
 
-> Edit: `APP_PORT` to change the exposed port in the local machine.
+Edit: `APP_PORT` to change the exposed port in the local machine.
 
 #### Run the application locally with `npm`
 
@@ -31,7 +31,7 @@ npm run dev
 
 > NOTE: This requires a local running `mysql` instance.
 
-> Edit: `/src/utils/config.ts` to the proper local configuration.
+Edit: `/src/utils/config.ts` to the proper local configuration.
 
 ### Usage
 
