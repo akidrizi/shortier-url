@@ -5,7 +5,7 @@ Shortier is a basic URL shortener API that shortens your URLs and tracks hits an
 The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** 
 where the generated URLs (table: _short_urls_) and analytics (table: _stats_) are stored.
 
-### Getting Started
+## Getting Started
 
 #### Run the application with `docker-compose`
 
@@ -33,11 +33,11 @@ npm run dev
 
 Edit: `/src/utils/config.ts` to the proper local configuration.
 
-### Usage
+## Usage
 
 Three endpoints have been exposed.
 
-#### Shorten a URL 
+### Shorten a URL 
 ```JSON
 POST /shorten
 
@@ -54,7 +54,7 @@ Success Response 201
 Bad Request 400
 ```
 
-#### Visit a shortened URL
+### Visit a shortened URL
 ```JSON
 GET /:code
 
@@ -63,7 +63,7 @@ Not Found 404
 ```
 > `GET /:code`: in local development use IPv4 on browser `GET 127.0.0.1:3000/:code`.
 
-#### View stats for a shortened URL
+### View stats for a shortened URL
 ```JSON
 GET /:code/stats
 
@@ -77,7 +77,7 @@ Success Response 200
 Not Found 404
 ```
 
-### Application Structure
+## Application Structure
 
 The codebase is located under the `/src` directory:
 
