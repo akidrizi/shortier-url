@@ -38,5 +38,5 @@ export async function postShortenUrl(req: Request, res: Response): Promise<Respo
 		shortUrl: getShortenedUrl(req, code),
 	};
 
-	return res.json(response);
+	return res.status(201).json(response);
 }

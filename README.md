@@ -46,7 +46,7 @@ Request
     "url": "http://example.com"
 }
 
-Success Response 200
+Success Response 201
 {
     "code": "vBAElVywy"
     "shortUrl": "://.../vBAElVywy"
