@@ -1,6 +1,6 @@
 # ShorTIER... Get it? 😅
 
-Shortier is a basic URL shortener API that shortens your URLs and is tracking the visits of the generated ones.
+Shortier is a basic URL shortener API that shortens your URLs and tracks hits analytics.
 
 The project is written with **TypeScript** and can be deployed with `docker-compose` along with **MySQL** 
 where the generated URLs (table: _short_urls_) and analytics (table: _stats_) are stored.
