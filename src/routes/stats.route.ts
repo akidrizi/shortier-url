@@ -1,5 +1,5 @@
-import express from "express";
 import { getStats } from "../controllers/stats.controller";
+import express from "express";
 
 export const statsRouter = express.Router();
 

@@ -1,8 +1,7 @@
-import { createServer } from "http";
-
 import { app } from "./app";
-import { sequelize } from "./utils/database";
 import { config, isProduction } from "./utils/config";
+import { sequelize } from "./utils/database";
+import { createServer } from "http";
 
 const port = config.app.port;
 

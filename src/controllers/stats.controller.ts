@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "express";
 import { ShortUrl } from "../models/shortUrl";
 import { Stats } from "../models/stats";
 import { getShortenedUrl } from "../services/shortener.service";
+import { NextFunction, Request, Response } from "express";
 
 export async function getStats(req: Request, res: Response, next: NextFunction): Promise<Response> {
 	try {
