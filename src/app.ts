@@ -8,7 +8,7 @@ import { visitUrlRouter } from "./routes/visit.route";
 
 import { isProduction } from "./utils/config";
 
-export const app = express();
+const app = express();
 
 app.use(morgan("combined"));
 app.use(express.json());
@@ -22,3 +22,5 @@ app.use(
 		log: isProduction(),
 	})
 );
+
+export default app;
