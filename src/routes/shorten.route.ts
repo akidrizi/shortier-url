@@ -1,5 +1,6 @@
-import { postShortenUrl } from "../controllers/shorten.controller";
 import express from "express";
+
+import { postShortenUrl } from "../controllers/shorten.controller";
 
 export const shortenRouter = express.Router();
 

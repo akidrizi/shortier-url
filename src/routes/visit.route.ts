@@ -1,5 +1,6 @@
-import { getOriginalUrl } from "../controllers/visit.controller";
 import express from "express";
+
+import { getOriginalUrl } from "../controllers/visit.controller";
 
 export const visitUrlRouter = express.Router();
 

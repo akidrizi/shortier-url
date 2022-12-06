@@ -1,4 +1,5 @@
-import { Table, Model, Column, DataType, HasOne } from "sequelize-typescript";
+import { Column, DataType, HasOne, Model, Table } from "sequelize-typescript";
+
 import { Stats } from "./stats";
 
 @Table({ tableName: "short_urls", createdAt: false, updatedAt: false })

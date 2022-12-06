@@ -1,4 +1,5 @@
-import { Table, Model, Column, DataType, BelongsTo, ForeignKey } from "sequelize-typescript";
+import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
+
 import { ShortUrl } from "./shortUrl";
 
 @Table({ tableName: "stats", createdAt: false, updatedAt: false })

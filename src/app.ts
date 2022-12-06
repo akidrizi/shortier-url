@@ -1,11 +1,12 @@
-// Routes
-import { shortenRouter } from "./routes/shorten.route";
-import { statsRouter } from "./routes/stats.route";
-import { visitUrlRouter } from "./routes/visit.route";
-import { isProduction } from "./utils/config";
 import express from "express";
 import morgan from "morgan";
 import strongErrorHandler from "strong-error-handler";
+
+import { shortenRouter } from "./routes/shorten.route";
+import { statsRouter } from "./routes/stats.route";
+import { visitUrlRouter } from "./routes/visit.route";
+
+import { isProduction } from "./utils/config";
 
 export const app = express();
 
