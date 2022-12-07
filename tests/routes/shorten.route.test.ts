@@ -4,7 +4,8 @@ import app from "../../src/app";
 import { sequelize } from "../../src/utils/database";
 
 describe("POST /shorten", () => {
-	beforeAll(() => sequelize.sync({ force: true }));
+	beforeAll(() => sequelize.sync({ force: false }));
+	afterAll(() => sequelize.sync({ force: false }));
 
 	it("should return 201 with Body", async () => {
 		const githubUrl = "https://www.github.com/";
@@ -14,8 +15,8 @@ describe("POST /shorten", () => {
 		});
 
 		expect(res.statusCode).toBe(201);
-		expect(res.body.shortUrl).toBeInstanceOf(String);
-		expect(res.body.code).toBeInstanceOf(String);
+		expect(typeof res.body.shortUrl).toBe("string");
+		expect(typeof res.body.code).toBe("string");
 	});
 
 	it("should return 400 for missing field", async () => {

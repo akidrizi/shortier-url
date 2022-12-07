@@ -12,4 +12,5 @@ export const sequelize = new Sequelize(config.mysql.database, config.mysql.user,
 	dialect: "mysql",
 	dialectModule: mysql2,
 	models: [ShortUrl, Stats],
+	logging: false,
 });

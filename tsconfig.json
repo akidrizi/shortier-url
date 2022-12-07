@@ -1,7 +1,9 @@
 {
 	"compilerOptions": {
 		"target": "es2016",
-		"lib": ["es6"],
+		"lib": [
+			"es6"
+		],
 		"module": "commonjs",
 		"rootDir": "src",
 		"resolveJsonModule": true,
@@ -14,10 +16,12 @@
 		"skipLibCheck": true,
 		"experimentalDecorators": true
 	},
-	"include": ["src"],
+	"include": [
+		"src"
+	],
 	"typedocOptions": {
-    "exclude": "**/+(*test*|node_modules)",
-    "externalPattern": "tests/*",
-    "excludeExternals": true,
+		"exclude": "**/+(*test*|node_modules)",
+		"externalPattern": "tests/*",
+		"excludeExternals": true
 	}
 }

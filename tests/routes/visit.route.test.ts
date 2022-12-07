@@ -4,7 +4,8 @@ import app from "../../src/app";
 import { sequelize } from "../../src/utils/database";
 
 describe("GET /:code", () => {
-	beforeAll(() => sequelize.sync({ force: true }));
+	beforeAll(() => sequelize.sync({ force: false }));
+	afterAll(() => sequelize.sync({ force: false }));
 
 	it("should return 302", async () => {
 		const githubUrl = "https://www.github.com/";
