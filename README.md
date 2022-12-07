@@ -48,7 +48,7 @@ Request
 
 Success Response 201
 {
-    "code": "vBAElVywy"
+    "code": "vBAElVywy",
     "shortUrl": "://.../vBAElVywy"
 }
 Bad Request 400
@@ -129,3 +129,5 @@ npm run format && npm run lint
     "build": "rimraf ./dist && tsc",
 ...
 ```
+
+## Testing

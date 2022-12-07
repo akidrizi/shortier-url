@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
-import { ShortUrl } from "../models/shortUrl";
-import { Stats } from "../models/stats";
+import ShortUrl from "../models/short-url.model";
+import Stats from "../models/stats.model";
 
 export async function getOriginalUrl(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
 	try {

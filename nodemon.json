@@ -1,15 +1,15 @@
 {
-  "watch": [
-    "src"
-  ],
-  "ext": ".ts,.js",
-  "ignore": [
-    ".git",
-    "node_modules/",
-    "dist/"
-  ],
-  "exec": "ts-node ./src/server.ts",
-  "env": {
-    "NODE_ENV": "development"
-  }
+	"watch": [
+		"src"
+	],
+	"ext": ".ts,.js",
+	"ignore": [
+		".git",
+		"node_modules/",
+		"dist/"
+	],
+	"exec": "ts-node ./src/server.ts",
+	"env": {
+		"NODE_ENV": "development"
+	}
 }

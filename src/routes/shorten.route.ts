@@ -2,7 +2,7 @@ import express from "express";
 
 import { postShortenUrl } from "../controllers/shorten.controller";
 
-export const shortenRouter = express.Router();
+const shortenRouter = express.Router();
 
 /**
  * POST /shorten
@@ -12,3 +12,5 @@ export const shortenRouter = express.Router();
  * JSON { "shortenedUrl": "//host.machine/gAGNU6FFZ" }
  */
 shortenRouter.post("/shorten", postShortenUrl);
+
+export default shortenRouter;

@@ -1,9 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 
-import { ShortUrl } from "../models/shortUrl";
-import { Stats } from "../models/stats";
+import ShortUrl from "../models/short-url.model";
+import Stats from "../models/stats.model";
+
 import { generateUniqueCode, getShortenedUrl } from "../services/shortener.service";
 import { isUrlHttp } from "../services/url-validator.service";
+
 import { badRequestResponse } from "../utils/http-error-response";
 
 export async function postShortenUrl(req: Request, res: Response, next: NextFunction): Promise<Response> {
