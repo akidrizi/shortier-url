@@ -1,9 +1,10 @@
-import { Sequelize } from "sequelize-typescript";
 import mysql2 from "mysql2";
+import { Sequelize } from "sequelize-typescript";
+
+import ShortUrl from "../models/short-url.model";
+import Stats from "../models/stats.model";
 
 import { config } from "./config";
-import { ShortUrl } from "../models/shortUrl";
-import { Stats } from "../models/stats";
 
 export const sequelize = new Sequelize(config.mysql.database, config.mysql.user, config.mysql.pass, {
 	host: config.mysql.host,
@@ -11,4 +12,5 @@ export const sequelize = new Sequelize(config.mysql.database, config.mysql.user,
 	dialect: "mysql",
 	dialectModule: mysql2,
 	models: [ShortUrl, Stats],
+	logging: false,
 });

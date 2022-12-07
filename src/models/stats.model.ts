@@ -1,8 +1,9 @@
-import { Table, Model, Column, DataType, BelongsTo, ForeignKey } from "sequelize-typescript";
-import { ShortUrl } from "./shortUrl";
+import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
+
+import ShortUrl from "./short-url.model";
 
 @Table({ tableName: "stats", createdAt: false, updatedAt: false })
-export class Stats extends Model {
+export default class Stats extends Model {
 	@Column({ type: DataType.INTEGER, autoIncrement: true, primaryKey: true })
 	id!: number;
 

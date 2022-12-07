@@ -1,6 +1,6 @@
-import shortid from "shortid";
-import { config, isProduction } from "../utils/config";
+// import { config, isProduction } from "../utils/config";
 import { Request } from "express";
+import shortid from "shortid";
 
 /**
  * Generates unique hash.

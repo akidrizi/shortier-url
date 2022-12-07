@@ -1,6 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import { ShortUrl } from "../models/shortUrl";
-import { Stats } from "../models/stats";
+import { NextFunction, Request, Response } from "express";
+
+import ShortUrl from "../models/short-url.model";
+import Stats from "../models/stats.model";
+
 import { getShortenedUrl } from "../services/shortener.service";
 
 export async function getStats(req: Request, res: Response, next: NextFunction): Promise<Response> {

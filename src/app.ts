@@ -2,19 +2,20 @@ import express from "express";
 import morgan from "morgan";
 import strongErrorHandler from "strong-error-handler";
 
-import { isProduction } from "./utils/config";
-// Routes
-import { shortenRouter } from "./routes/shorten.route";
-import { visitUrlRouter } from "./routes/visit.route";
-import { statsRouter } from "./routes/stats.route";
+import shortenRouter from "./routes/shorten.route";
+import statsRouter from "./routes/stats.route";
+import visitRouter from "./routes/visit.route";
 
-export const app = express();
+import { isProduction } from "./utils/config";
+
+const app = express();
 
 app.use(morgan("combined"));
 app.use(express.json());
+// Routes
 app.use("/", shortenRouter);
 app.use("/", statsRouter);
-app.use("/", visitUrlRouter);
+app.use("/", visitRouter);
 
 app.use(
 	strongErrorHandler({
@@ -22,3 +23,5 @@ app.use(
 		log: isProduction(),
 	})
 );
+
+export default app;

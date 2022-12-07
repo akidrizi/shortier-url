@@ -1,8 +1,9 @@
-import { Table, Model, Column, DataType, HasOne } from "sequelize-typescript";
-import { Stats } from "./stats";
+import { Column, DataType, HasOne, Model, Table } from "sequelize-typescript";
+
+import Stats from "./stats.model";
 
 @Table({ tableName: "short_urls", createdAt: false, updatedAt: false })
-export class ShortUrl extends Model {
+export default class ShortUrl extends Model {
 	@Column({ type: DataType.STRING(36), primaryKey: true, allowNull: false })
 	code!: string;
 
