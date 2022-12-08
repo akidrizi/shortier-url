@@ -1,5 +1,5 @@
 # ShorTIER... Get it? 😅
-![Node.JS CI](https://github.com/akidrizi/shortier-url/actions/workflows/node.yml/badge.svg?branch=main)
+[![Node.js CI](https://github.com/akidrizi/shortier-url/actions/workflows/node.yml/badge.svg?branch=main)](https://github.com/akidrizi/shortier-url/actions/workflows/node.yml)
 
 Shortier is a basic URL shortener API that shortens your URLs and tracks hits analytics.
 
