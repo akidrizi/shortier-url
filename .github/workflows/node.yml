@@ -3,12 +3,28 @@ name: Node.js CI
 on: [ push ]
 
 jobs:
-  build-ubuntu:
+  build-unix:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: [ 16, 18, 19 ]
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-latest, macOS-latest ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm --version
+      - run: npm ci --ignore-scripts
+      - run: npm test
+
+  build-windows:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [ 16, 18, 19 ]
+        os: [ windows-latest ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
