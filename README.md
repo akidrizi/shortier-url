@@ -1,4 +1,5 @@
 # ShorTIER... Get it? 😅
+![Node.JS CI](https://github.com/akidrizi/shortier-url/actions/workflows/node.yml/badge.svg)
 
 Shortier is a basic URL shortener API that shortens your URLs and tracks hits analytics.
 
@@ -106,7 +107,7 @@ app.use(
 );
 ```
 
-**[husky](https://www.npmjs.com/package/husky)** for `pre-commit` hooks in installed upon node prepare:
+**[husky](https://www.npmjs.com/package/husky)**, a package for `pre-commit` hooks, is installed upon `npm prepare`:
 ```json
 // package.json
 
