@@ -21,9 +21,10 @@ export function generateUniqueCode(): string {
  */
 export function getShortenedUrl(req: Request, code: string): string {
 	const host = req.get("host");
+	const protocol = req.secure ? "https" : "http";
 
 	// Disabled to prevent miss-usage from users.
 	// if (isProduction()) return `https://${config.app.baseUrl}/${code}`;
 
-	return `://${host}/${code}`;
+	return `${protocol}://${host}/${code}`;
 }
