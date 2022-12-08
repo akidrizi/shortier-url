@@ -1,12 +1,15 @@
 import request from "supertest";
 
 import app from "../../src/app";
-import { sequelize } from "../../src/utils/database";
+
+jest.mock("../../src/models/short-url.model");
+jest.mock("../../src/models/stats.model");
+
+beforeEach(() => {
+	jest.resetAllMocks();
+});
 
 describe("POST /shorten", () => {
-	beforeAll(() => sequelize.sync({ force: false }));
-	afterAll(() => sequelize.sync({ force: false }));
-
 	it("should return 201 with Body", async () => {
 		const githubUrl = "https://www.github.com/";
 

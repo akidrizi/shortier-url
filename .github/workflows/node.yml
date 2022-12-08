@@ -14,13 +14,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: samin/mysql-action@v1
-        with:
-          mysql version: '5.7'
-          mysql database: $MYSQL_DB
-          mysql root password: $MYSQL_PASS
-          mysql user: $MYSQL_USER
-          mysql password: $MYSQL_PASS
+
       - run: npm --version
       - run: npm ci --ignore-scripts
       - run: npm test
